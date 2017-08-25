@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Asian Games Schedule</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="create_account">Create New Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="home">Home</string>
+    <string name="message">Message</string>
+    <string name="my_account">My Account</string>
+    <string name="events">Events</string>
+    <string name="realtime">Realtime</string>
+    <string name="live">Live</string>
+    <string name="description">Description</string>
+    <string name="arena">Arena</string>
+    <string name="sub_event">Sub Event</string>
+    <string name="no_data">No data</string>
+</resources>
