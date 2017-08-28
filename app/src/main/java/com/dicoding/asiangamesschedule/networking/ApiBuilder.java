@@ -19,7 +19,7 @@ public class ApiBuilder {
                         Request original = chain.request();
                         Request request = original.newBuilder()
                                 .header("Content-Type", "application/json")
-                                .header("Authorization", "Basic YOUR_TOKEN")
+                                .header("Authorization", "Basic RGljb2Rpbmc6aXJBWjk3N2FFY0toeDJDcw==")
                                 .removeHeader("Pragma")
                                 .build();
                         return chain.proceed(request);

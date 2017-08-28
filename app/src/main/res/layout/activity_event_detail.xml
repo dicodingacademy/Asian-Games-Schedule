@@ -73,6 +73,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingBottom="5dp"
+                android:text="@string/when"
+                android:textSize="18sp"
+                android:textColor="@color/primaryText"/>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/secondaryText"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="5dp"
                 android:text="@string/description"
                 android:textSize="18sp"
                 android:textColor="@color/primaryText"/>

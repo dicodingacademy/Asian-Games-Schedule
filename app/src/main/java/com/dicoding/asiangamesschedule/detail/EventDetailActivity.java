@@ -30,6 +30,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Response;
@@ -59,6 +63,9 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
 
     @BindView(R.id.text_no_data)
     TextView textNoData;
+
+    @BindView(R.id.time)
+    TextView textTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +138,14 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .skipMemoryCache(true)
                 .into(headerImage);
+
+        Timestamp startStamp = new Timestamp(Long.parseLong(response.body().getStartTime()));
+        Timestamp endStamp = new Timestamp(Long.parseLong(response.body().getEndTime()));
+        Date startDate = new Date(startStamp.getTime());
+        Date endDate = new Date(endStamp.getTime());
+        SimpleDateFormat formatDate = new SimpleDateFormat("EEE, dd MMM yyyy, hh:mm");
+        textTime.setText(formatDate.format(startDate) + " - " + formatDate.format(endDate));
+
         textDescription.setText(response.body().getDescription());
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map_view);

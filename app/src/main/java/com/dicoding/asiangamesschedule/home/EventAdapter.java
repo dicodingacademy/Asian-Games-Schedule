@@ -13,6 +13,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.dicoding.asiangamesschedule.R;
 import com.dicoding.asiangamesschedule.model.EventResponse;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
@@ -36,8 +39,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     public void onBindViewHolder(EventAdapter.ViewHolder holder, int position) {
         holder.click(data.get(position), listener);
         holder.textEventName.setText(data.get(position).getName());
-        holder.textTime.setText(data.get(position).getStartTime() + " - " + data.get(position).getEndTime());
         holder.textArena.setText(data.get(position).getArenas().get(0).getName());
+
+        Timestamp startStamp = new Timestamp(Long.parseLong(data.get(position).getStartTime()));
+        Timestamp endStamp = new Timestamp(Long.parseLong(data.get(position).getEndTime()));
+        Date startDate = new Date(startStamp.getTime());
+        Date endDate = new Date(endStamp.getTime());
+        SimpleDateFormat formatDate = new SimpleDateFormat("EEE, dd MMM yyyy, hh:mm");
+        holder.textTime.setText(formatDate.format(startDate) + " - " + formatDate.format(endDate));
 
         Object images = data.get(position).getImageUrl();
         Glide.with(context)

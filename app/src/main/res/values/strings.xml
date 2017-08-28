@@ -18,4 +18,5 @@
     <string name="arena">Arena</string>
     <string name="sub_event">Sub Event</string>
     <string name="no_data">No data</string>
+    <string name="when">When</string>
 </resources>

@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+/app/src/main/java/com/dicoding/asiangamesschedule/networking/ApiBuilder.Java
+/app/src/main/AndroidManifest.xml
