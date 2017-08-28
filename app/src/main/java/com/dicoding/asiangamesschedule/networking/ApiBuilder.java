@@ -27,7 +27,7 @@ public class ApiBuilder {
                 });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://193.161.189.25:6081/api/")
+                .baseUrl("http://ene-dicoding.asiangamesdigitalchallenge2017.kemkominfo-ericsson.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
