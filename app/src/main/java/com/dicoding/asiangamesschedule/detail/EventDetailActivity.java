@@ -74,7 +74,6 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
         ButterKnife.bind(this);
         progressDialog = new ProgressDialog(this);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         id = getIntent().getIntExtra("id", 0);
         initializePresenter();
@@ -85,16 +84,6 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
         context = this;
         presenter = new EventDetailPresenter(context, this);
         presenter.getEventDetail(id);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (item.getItemId() == android.R.id.home){
-            finish();
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
